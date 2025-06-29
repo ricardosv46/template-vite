@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+:root {
+  --blue: #003770;
+  --skyblue: #0073cf;
+  --skyblue-light: #69b2e8;
+  --yellow: #ffb81c;
+  --light-skyblue: #aaeff6;
+  --gray: #bcbcbc;
+  --gray-light: #bdbdbd;
+  --gray-extra-light: #f2f2f2;
+  --red: #e3002b;
+  --dark-gray: #4f4f4f;
+  --green: #76bd43;
+}
+
+@theme {
+  --color-blue: var(--blue);
+  --color-skyblue: var(--skyblue);
+  --color-skyblue-light: var(--skyblue-light);
+  --color-yellow: var(--yellow);
+  --color-light-skyblue: var(--light-skyblue);
+  --color-gray: var(--gray);
+  --color-gray-light: var(--gray-light);
+  --color-gray-extra-light: var(--gray-extra-light);
+  --color-red: var(--red);
+  --color-dark-gray: var(--dark-gray);
+  --color-green: var(--green);
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-2lg: 1200px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1650px;
+}
+
+@layer base {
+  html {
+    font-family: 'Poppins', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  button {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.layout-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+@keyframes fastBlink {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fast-blink {
+  animation: fastBlink 0.8s ease-in-out infinite;
+}
